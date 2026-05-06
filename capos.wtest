@@ -1,0 +1,13 @@
+import capos.*
+import artefactos.*
+
+test "Almacenar items en el castillo" {
+    rolando.encontrar(espadaDelDestino)
+    rolando.encontrar(collarDivino)
+    assert.equals([espadaDelDestino, collarDivino], rolando.inventario())
+
+    assert.equals([], castillo.inventario())
+    rolando.almacenar()
+    assert.equals([], rolando.inventario())
+    assert.equals([espadaDelDestino, collarDivino], castillo.inventario())
+}
